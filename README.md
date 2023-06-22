@@ -1,7 +1,6 @@
 # VueJsCountDown
 
-Project for a simple countdown.
-In this project, I use TailwindCss
+It is a simple project with a CountDown, for the style of it i use tailwindcss (the link for the installation instruction: https://tailwindcss.com/docs/installation)
 Note that the countdown end time is in two month at noon from when you start it.
 
 ## Recommended IDE Setup
@@ -47,7 +46,7 @@ npm run build
 npm run lint
 ```
 
-### If you encounter a problem in the installation of tailwind css
+### If you encounter a problem in the installation of tailwindcss maybe this will help you
 
 Change this line (in the file tailwind.config.js)
 ```sh
