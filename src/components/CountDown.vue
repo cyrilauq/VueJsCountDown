@@ -27,12 +27,48 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { onMounted, onUnmounted, ref } from 'vue'
+
+    const countEnd = new Date();
+    countEnd.setMonth(countEnd.getMonth() + 2)
+    countEnd.setHours(12)
+    countEnd.setMinutes(0)
+    countEnd.setSeconds(0)
 
     const days = ref(0)
     const hours = ref(0)
     const minutes = ref(0)
     const seconds = ref(0)
+
+    var count = 0
+
+    function displayCount() {
+        const currentDate = new Date()
+        const timeDiff = countEnd.getTime() - currentDate.getTime()
+        if(timeDiff < 0 && count != null) {
+            clearInterval(count)
+        }
+        console.log("coucou");
+        var distance = timeDiff
+        days.value = Math.floor(distance / (1000 * 60 * 60 * 24))
+        distance = distance % (1000 * 60 * 60 * 24)
+        hours.value = Math.floor(distance / (1000 * 60 * 60))
+        distance = distance % (1000 * 60 * 60)
+        minutes.value = Math.floor(distance / (1000 * 60))
+        distance = distance % (1000 * 60)
+        seconds.value = Math.floor(distance / (1000))
+        distance = distance % (1000)
+    }
+
+    onMounted(() => {
+        count = setInterval(() => {
+            displayCount()
+        }, 1000)
+    })
+
+    onUnmounted(() => {
+        count = 0
+    })
 </script>
 
 <style scoped>
