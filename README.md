@@ -2,6 +2,7 @@
 
 Project for a simple countdown.
 In this project, I use TailwindCss
+Note that the countdown end time is in two month at noon from when you start it.
 
 ## Recommended IDE Setup
 
