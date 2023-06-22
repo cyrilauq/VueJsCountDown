@@ -1,6 +1,7 @@
 # VueJsCountDown
 
-This template should help get you started developing with Vue 3 in Vite.
+Project for a simple countdown.
+In this project, I use TailwindCss
 
 ## Recommended IDE Setup
 
@@ -44,3 +45,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### If you encounter a problem in the installation of tailwind css
+
+Change this line (in the file tailwind.config.js)
+```sh
+"./src/**/*.{js,ts,jsx,tsx}",
+```
+by this
+```sh
+"./src/**/*.{js,ts,jsx,tsx,vue}",
+```
+If the first line isn't present in the file, then just add it
